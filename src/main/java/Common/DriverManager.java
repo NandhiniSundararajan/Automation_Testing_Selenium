@@ -76,6 +76,21 @@ public class DriverManager {
 
     }
 
+    public void maximizeWindow(){
+        driver.manage().window().maximize();
+    }
+
+    public void navigateToPage(String url){
+        driver.get(url);
+    }
+
+    public void enterText(By locator, String text){
+        driver.findElement(locator).sendKeys(text);
+    }
+
+    public void click(By locator){
+        driver.findElement(locator).click();
+    }
     public void wait(int seconds) {
         try {
             Thread.sleep(seconds * 1000);
