@@ -6,6 +6,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
+import java.util.List;
+
+
+
 public class DriverManager {
 
     public WebDriver driver;
@@ -91,9 +95,23 @@ public class DriverManager {
     public void click(By locator){
         driver.findElement(locator).click();
     }
+
+    public boolean isElementPresent(By by){
+        return driver.findElements(by).size() > 0;
+
+    }
+
     public void wait(int seconds) {
         try {
             Thread.sleep(seconds * 1000);
+        } catch (InterruptedException ie) {
+            System.out.println(ie);
+        }
+    }
+
+    public void milliSecWait(int milliSeconds) {
+        try {
+            Thread.sleep(milliSeconds);
         } catch (InterruptedException ie) {
             System.out.println(ie);
         }

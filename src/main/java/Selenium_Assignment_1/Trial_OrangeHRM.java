@@ -1,11 +1,14 @@
 package Selenium_Assignment_1;
 
+import Common.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Trial_OrangeHRM {
+import java.sql.Driver;
+
+public class Trial_OrangeHRM extends DriverManager {
 
 
     public static void main(String[] args) throws InterruptedException {
@@ -32,7 +35,7 @@ public class Trial_OrangeHRM {
         WebElement loginButton = chromedriver.findElement(By.className("orangehrm-login-button"));
         loginButton.click();
 
-        Thread.sleep(5000);
+
         chromedriver.quit();
 
         //error msg oxd-text oxd-text--p oxd-alert-content-text
