@@ -63,9 +63,9 @@ public class DragDrop extends DriverManager {
 
         Actions action1 = new Actions(driver);
         //to drag and drop row6
-        action1.dragAndDrop(source, target).perform();
+       // action1.dragAndDrop(source, target).perform();
 
-
+        action1.clickAndHold(source).pause(Duration.ofMillis(500)).moveToElement(target).release().perform();
         System.out.println("Message from alert:: " + driver.findElement(By.xpath("//div[@class='ui-growl-message']")).getText());
 
         quitBrowser();
